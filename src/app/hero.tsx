@@ -7,6 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 const Hero = () => {
   return (
     <section className="bg-[url(/img/hero.png)] bg-cover bg-center h-screen bg-no-repeat">
+      <div className="absolute inset-y-0 right-0 h-full w-1/3 bg-gradient-to-l from-secondary to-transparent lg:block hidden"></div>
       <div className="mx-auto max-w-screen-xl h-screen content-center px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="max-w-xl">
           <h1 className="text-3xl font-extrabold text-white sm:text-5xl">

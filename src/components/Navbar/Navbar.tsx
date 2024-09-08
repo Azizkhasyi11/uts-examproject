@@ -40,7 +40,7 @@ const Navbar = () => {
     <nav
       className={`w-full text-white fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
         isMenuOpen || isScrolling
-          ? "bg-secondary shadow-lg py-3"
+          ? "bg-secondary shadow-lg py-3 px-2"
           : "bg-transparent py-1"
       }`}
     >
