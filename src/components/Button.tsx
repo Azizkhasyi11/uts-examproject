@@ -9,7 +9,7 @@ interface ButtonProps {
   href?: string;
   iconPosition?: "left" | "right";
   bordered?: boolean;
-  withIcon?: boolean; // Optional prop to toggle the icon
+  withIcon?: boolean;
 }
 
 const Button: React.FC<ButtonProps> = ({

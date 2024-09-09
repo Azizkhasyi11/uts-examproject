@@ -37,8 +37,8 @@ const FeatureSection = ({
           <Image
             src={imgSrc}
             alt={imgAlt}
-            width={400} // Setting default width
-            height={300} // Setting default height
+            width={400}
+            height={300}
             className="object-cover w-full h-full"
           />
         </div>

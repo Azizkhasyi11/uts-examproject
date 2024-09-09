@@ -15,8 +15,8 @@ const Hero = () => {
         alt="Hero background"
         layout="fill"
         objectFit="cover"
-        priority={true} // Ensures the hero image is loaded first
-        className="absolute top-0 left-0 w-full h-full z-[-1]" // Places the image behind content
+        priority={true}
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
       />
 
       {/* Hero Content */}
