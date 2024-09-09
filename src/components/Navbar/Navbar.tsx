@@ -53,16 +53,16 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            <NavLink href="#" className="underline">
+            <NavLink href="#">
               Products
             </NavLink>
-            <NavLink href="#" className="underline">
+            <NavLink href="#">
               Blog
             </NavLink>
-            <NavLink href="#" className="underline">
+            <NavLink href="#">
               Support
             </NavLink>
-            <NavLink href="#" className="underline">
+            <NavLink href="#">
               Login
             </NavLink>
             <Button
@@ -92,16 +92,16 @@ const Navbar = () => {
           className={`${isMenuOpen ? "bg-secondary" : "bg-transparent"} py-2`}
         >
           <div className="px-4 pt-4 pb-2 space-y-2">
-            <NavLink href="#" className="block underline text-white">
+            <NavLink href="#" className="block text-white">
               Products
             </NavLink>
-            <NavLink href="#" className="block underline text-white">
+            <NavLink href="#" className="block text-white">
               Blog
             </NavLink>
-            <NavLink href="#" className="block underline text-white">
+            <NavLink href="#" className="block text-white">
               Support
             </NavLink>
-            <NavLink href="#" className="block underline text-white">
+            <NavLink href="#" className="block text-white">
               Login
             </NavLink>
             <Button

@@ -47,22 +47,29 @@ const TestimonialSection = () => {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (carouselRef.current) {
-      const cardElements = carouselRef.current.querySelectorAll("div");
-      const cardWidth = cardElements[0]?.offsetWidth || 0;
-      const containerWidth = carouselRef.current.offsetWidth;
+    const updateCarouselScroll = () => {
+      if (carouselRef.current) {
+        const cardElements = carouselRef.current.querySelectorAll("div");
+        const cardWidth = cardElements[0]?.offsetWidth || 0;
+        const containerWidth = carouselRef.current.offsetWidth;
 
-      // Calculate the scrollLeft value to center the selected card
-      const scrollLeft =
-        cardWidth * currentIndex -
-        (containerWidth - cardWidth) / 2 +
-        cardWidth / 2;
+        // Calculate the scrollLeft value to center the selected card
+        const scrollLeft =
+          cardWidth * currentIndex - (containerWidth - 20 - cardWidth) / 2;
 
-      carouselRef.current.scrollTo({
-        left: scrollLeft,
-        behavior: "smooth",
-      });
-    }
+        carouselRef.current.scrollTo({
+          left: scrollLeft,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    updateCarouselScroll();
+    window.addEventListener("resize", updateCarouselScroll);
+
+    return () => {
+      window.removeEventListener("resize", updateCarouselScroll);
+    };
   }, [currentIndex]);
 
   const handlePrev = () => {
