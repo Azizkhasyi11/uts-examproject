@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lexendDeca.className} antialiased scroll-smooth`}>
+      <body className={`${lexendDeca.className} antialiased scroll-smooth bg-secondary`}>
         {children}
       </body>
     </html>
