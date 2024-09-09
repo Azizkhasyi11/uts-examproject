@@ -9,7 +9,7 @@ export const Footer = () => {
     <footer className="bg-secondary w-full text-white">
       <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
         {/* Logo and Description */}
-        <div className="space-y-4">
+        <div className="space-y-4 lg:col-span-1 md:col-span-2">
           <Image src="/logo.svg" width={138} height={52} alt="Logo" />
           <p className="text-off-white text-sm">
             Collaboration platform for modern teams
@@ -18,7 +18,7 @@ export const Footer = () => {
 
         {/* Company Links */}
         <div className="space-y-3">
-          <h3 className="text-soft-blue text-lg font-semibold text-primary">Company</h3>
+          <h3 className="text-primary text-lg font-semibold">Company</h3>
           <ul className="space-y-2 text-off-white text-sm">
             <li>Product</li>
             <li>Blog</li>
@@ -28,7 +28,7 @@ export const Footer = () => {
 
         {/* Features Links */}
         <div className="space-y-3">
-          <h3 className="text-soft-blue text-lg font-semibold text-primary">Features</h3>
+          <h3 className="text-primary text-lg font-semibold">Features</h3>
           <ul className="space-y-2 text-off-white text-sm">
             <li>Screen Sharing</li>
             <li>iOS & Android Apps</li>
@@ -39,7 +39,7 @@ export const Footer = () => {
 
         {/* Contact Information */}
         <div className="space-y-3">
-          <h3 className="text-soft-blue text-lg font-semibold text-primary">Contact Us</h3>
+          <h3 className="text-primary text-lg font-semibold">Contact Us</h3>
           <ul className="space-y-2 text-off-white text-sm">
             <li>info@teamapp.com</li>
             <li>1-800-200-300</li>
@@ -53,11 +53,16 @@ export const Footer = () => {
 
         {/* Newsletter Subscription */}
         <div className="space-y-4">
-          <h3 className="text-soft-blue text-lg font-semibold">
+          <h3 className="text-primary text-lg font-semibold">
             Stay up to date
           </h3>
           <p className="text-off-white text-sm">Subscribe to our newsletter</p>
-          <Input label="newsletter" placeholder="Email" aria-label="Email" className="text-black" />
+          <Input
+            label="newsletter"
+            placeholder="Email"
+            aria-label="Email"
+            className="text-black"
+          />
         </div>
       </div>
 

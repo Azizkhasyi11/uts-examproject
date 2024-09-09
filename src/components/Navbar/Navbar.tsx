@@ -38,14 +38,14 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`w-full text-white fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
+      className={`w-full fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
         isMenuOpen || isScrolling
-          ? "bg-secondary shadow-lg py-3"
+          ? "bg-secondary shadow-lg py-3 px-2"
           : "bg-transparent py-1"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
+      <div className="lg:container lg:mx-auto px-4 mobile:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center text-sm">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image src={"/logo.svg"} width={138} height={52} alt="Logo" />
@@ -66,7 +66,7 @@ const Navbar = () => {
               Login
             </NavLink>
             <Button
-              className="bg-opacity-50"
+              className="text-secondary"
               label="Get Access"
               withIcon={false}
             />
@@ -76,7 +76,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <RxHamburgerMenu
               onClick={handleOpen}
-              className="cursor-pointer text-2xl"
+              className="cursor-pointer text-2xl text-white"
             />
           </div>
         </div>
@@ -92,20 +92,20 @@ const Navbar = () => {
           className={`${isMenuOpen ? "bg-secondary" : "bg-transparent"} py-2`}
         >
           <div className="px-4 pt-4 pb-2 space-y-2">
-            <NavLink href="#" className="block underline">
+            <NavLink href="#" className="block underline text-white">
               Products
             </NavLink>
-            <NavLink href="#" className="block underline">
+            <NavLink href="#" className="block underline text-white">
               Blog
             </NavLink>
-            <NavLink href="#" className="block underline">
+            <NavLink href="#" className="block underline text-white">
               Support
             </NavLink>
-            <NavLink href="#" className="block underline">
+            <NavLink href="#" className="block underline text-white">
               Login
             </NavLink>
             <Button
-              className="w-full bg-opacity-50"
+              className="text-secondary"
               label="Get Access"
               withIcon={false}
             />

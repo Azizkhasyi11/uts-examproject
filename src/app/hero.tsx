@@ -1,60 +1,73 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <section className="bg-[url(/img/hero.png)] bg-cover bg-center h-screen bg-no-repeat">
-      <div className="mx-auto max-w-screen-xl h-screen content-center px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <section className="relative h-screen">
+      {/* Hero Background Image */}
+      <Image
+        src="/img/hero.png"
+        alt="Hero background"
+        layout="fill"
+        objectFit="cover"
+        priority={true} // Ensures the hero image is loaded first
+        className="absolute top-0 left-0 w-full h-full z-[-1]" // Places the image behind content
+      />
+
+      {/* Hero Content */}
+      <motion.div
+        className="mx-auto max-w-screen-xl h-screen flex items-center px-4 py-32 mobile:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="max-w-xl">
-          <h1 className="text-3xl font-extrabold text-white sm:text-5xl">
+          {/* Title */}
+          <motion.h1
+            className="text-3xl font-extrabold text-white mobile:text-4xl md:text-5xl"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 1 }}
+          >
             Instant collaboration for remote teams
-          </h1>
+          </motion.h1>
 
-          <p className="mt-4 max-w-lg text-white sm:text-xl/relaxed font-light">
-            All-in-one place for your remote team to chat, collaborate and track
-            project progress.
-          </p>
+          {/* Subtitle */}
+          <motion.p
+            className="mt-4 max-w-lg text-white mobile:text-sm md:text-lg/relaxed font-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            All-in-one place for your remote team to chat, collaborate, and
+            track project progress.
+          </motion.p>
 
-          <div className="mt-8 flex flex-wrap gap-4 text-center">
+          {/* Input and Button */}
+          <motion.div
+            className="mt-8 flex flex-wrap gap-4 text-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 1 }}
+          >
+            {/* Input with Icon */}
             <Input
               label="email"
               placeholder="Enter your email"
               icon={<FaArrowRightLong />}
+              aria-label="Email address"
             />
 
-            {/* <a
-              className="group relative inline-flex items-center overflow-hidden rounded bg-indigo-600 px-8 py-3 text-white focus:outline-none focus:ring active:bg-indigo-500"
-              href="#"
-            >
-              <span className="absolute -end-full transition-all group-hover:end-4">
-                <svg
-                  className="size-5 rtl:rotate-180"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </span>
-
-              <span className="text-sm font-light transition-all group-hover:me-4">
-                Get Early Access
-              </span> */}
-            {/* </a> */}
-
+            {/* Call-to-action Button */}
             <Button label="Get Early Access" />
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

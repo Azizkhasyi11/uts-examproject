@@ -25,7 +25,7 @@ const Input: React.FC<InputProps> = ({
         type="email"
         id={label}
         placeholder={placeholder}
-        className="block w-full rounded px-3 py-3 text-sm font-light shadow focus:outline-none sm:w-auto"
+        className="block w-full rounded px-3 py-3 text-sm font-light shadow focus:outline-none mobile:w-auto"
       />
 
       {icon && (
