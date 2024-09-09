@@ -14,7 +14,7 @@ const NotFound = () => {
           Uh-oh!
         </p>
         <p className="mt-4 text-gray-500 dark:text-gray-400">
-          We can't find that page.
+          We can&apos;t find that page.
         </p>
         <Button
           href="/"
