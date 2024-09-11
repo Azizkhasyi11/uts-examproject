@@ -7,7 +7,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Team - Collaboration Tool for Remote Teams",
   description:
-    "Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively.",
+    "Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively. Remake by: Aziz Khasyi",
   authors: [{ name: "Aziz Khasyi" }],
   openGraph: {
     title: "Team - Collaboration Tool for Remote Teams",
@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     url: "https://teamdots.vercel.app",
     type: "website",
     locale: "en_US",
+    siteName: "Team",
   },
 };
 
