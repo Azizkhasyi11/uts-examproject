@@ -9,7 +9,7 @@ const Highlight = () => {
     <section className="relative overflow-hidden py-12">
       <div className="container mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
         <motion.div
-          className="relative h-64 mobile:h-80 lg:h-full w-full lg:ml-24 lg:mr-[-80px] lg:order-last"
+          className="relative h-64 sm:h-80 lg:h-full w-full lg:ml-24 lg:mr-[-100px] lg:order-last"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -28,7 +28,7 @@ const Highlight = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-3xl font-bold mobile:text-4xl"
+            className="text-3xl font-bold sm:text-4xl"
           >
             Chats for your distributed teams
           </motion.h2>

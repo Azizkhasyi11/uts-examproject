@@ -2,49 +2,24 @@
 
 import NavigationButtons from "@/components/NavigationButtons";
 import TestimonialCard from "@/components/TestimonialCard";
-import { useState, useRef, useEffect } from "react";
+import { generateTestimonials } from "@/fake/generateTestimonials";
+import { useState, useEffect, useRef } from "react";
 
-const testimonials = [
-  {
-    name: "Chealsea Morgan",
-    title: "CEO ot Subway",
-    rating: 5,
-    content:
-      "Vestibulum eu quam nec neque pellentesque efficitur id eget nisl. Proin porta est convallis lacus blandit pretium sed non enim. Maecenas lacinia non orci at aliquam. Donec finibus, urna bibendum ultricies laoreet.",
-  },
-  {
-    name: "Nick Cave",
-    title: "CMO ot Nokia",
-    rating: 5,
-    content:
-      "In a laoreet purus. Integer turpis quam, laoreet id orci nec, ultrices lacinia nunc. Aliquam erat volutpat. Curabitur fringilla in purus eget egestas. Etiam quis.",
-  },
-  {
-    name: "Lana Rosenfeld",
-    title: "Senior VP ot Pinterest",
-    rating: 5,
-    content:
-      "Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo.",
-  },
-  {
-    name: "Lana Rosenfeld",
-    title: "Senior VP ot Pinterest",
-    rating: 5,
-    content:
-      "Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo.",
-  },
-  {
-    name: "Lana Rosenfeld",
-    title: "Senior VP ot Pinterest",
-    rating: 5,
-    content:
-      "Aliquam pulvinar vestibulum blandit. Donec sed nisl libero. Fusce dignissim luctus sem eu dapibus. Pellentesque vulputate quam a quam volutpat, sed ullamcorper erat commodo.",
-  },
-];
+interface Testimonial {
+  name: string;
+  title: string;
+  rating: number;
+  content: string;
+}
 
 const TestimonialSection = () => {
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setTestimonials(generateTestimonials(10));
+  }, []);
 
   useEffect(() => {
     const updateCarouselScroll = () => {
@@ -53,7 +28,6 @@ const TestimonialSection = () => {
         const cardWidth = cardElements[0]?.offsetWidth || 0;
         const containerWidth = carouselRef.current.offsetWidth;
 
-        // Calculate the scrollLeft value to center the selected card
         const scrollLeft =
           cardWidth * currentIndex - (containerWidth - 20 - cardWidth) / 2;
 
@@ -83,6 +57,10 @@ const TestimonialSection = () => {
       prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
     );
   };
+
+  if (testimonials.length === 0) {
+    return <p>Loading testimonials...</p>;
+  }
 
   return (
     <section className="py-12">

@@ -4,6 +4,7 @@ import Highlights from "./highlights";
 import Hero from "./hero";
 import TestimonialSection from "./testimonial";
 import Features from "./features";
+import ToTop from "@/components/ToTop";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <TestimonialSection />
         <Footer />
       </div>
+      <ToTop />
     </>
   );
 }
