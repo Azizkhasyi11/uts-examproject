@@ -6,6 +6,7 @@ import { generateTestimonials } from "@/fake/generateTestimonials";
 import { useState, useEffect, useRef } from "react";
 
 interface Testimonial {
+  avatar: string;
   name: string;
   title: string;
   rating: number;
@@ -80,6 +81,7 @@ const TestimonialSection = () => {
             {testimonials.map((testimonial, index) => (
               <TestimonialCard
                 key={index}
+                avatar={testimonial.avatar}
                 name={testimonial.name}
                 title={testimonial.title}
                 rating={testimonial.rating}
