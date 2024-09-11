@@ -2,21 +2,33 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const lexendDeca = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Team",
-  description: "Team is a collaboration tool for remote teams.",
+  title: "Team - Collaboration Tool for Remote Teams",
+  description:
+    "Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively.",
+  authors: [{ name: "Aziz Khasyi" }],
+  openGraph: {
+    title: "Team - Collaboration Tool for Remote Teams",
+    description:
+      "Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively.",
+    url: "https://teamdots.vercel.app",
+    type: "website",
+    locale: "en_US",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body className={`${lexendDeca.className} antialiased scroll-smooth bg-secondary`}>
+      <body
+        className={`${montserrat.className} antialiased scroll-smooth bg-secondary`}
+      >
         {children}
       </body>
     </html>
