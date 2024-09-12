@@ -6,6 +6,7 @@ import { FaStar } from "react-icons/fa6";
 import { motion } from "framer-motion";
 
 interface TestimonialCardProps {
+  avatar?: string;
   name: string;
   title: string;
   rating: number;
@@ -14,6 +15,7 @@ interface TestimonialCardProps {
 }
 
 const TestimonialCard = ({
+  avatar,
   name,
   title,
   rating,
@@ -22,25 +24,26 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <motion.div
-      className={`bg-white p-5 shadow-lg min-w-[300px] max-w-[400px] ${
-        isActive ? "scale-105" : "scale-100"
-      }`}
-      initial={{ opacity: 0, scale: 0.9 }}
+      className="bg-white p-5 shadow-lg min-w-[300px] max-w-[400px] mx-auto"
+      initial={{ opacity: 0, scale: 0.9 }} 
       animate={{ opacity: 1, scale: isActive ? 1.05 : 1 }}
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          {Array.from({ length: rating }).map((_, i) => (
-            <FaStar key={i} className="text-tertiary" />
+        <div className="flex items-center gap-1">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <FaStar
+              key={i}
+              className={i < rating ? "text-tertiary" : "text-gray-300"}
+            />
           ))}
         </div>
         <p className="mt-4 text-sm text-gray-600 leading-relaxed">{content}</p>
       </div>
       <div className="mt-8 flex items-center gap-4">
         <Image
-          src="/img/avatar.jpeg"
-          alt="User avatar"
+          src={avatar ?? "/img/avatar.jpeg"}
+          alt={`${name ?? "User"} avatar`}
           width={56}
           height={56}
           className="w-12 h-12 rounded-full"

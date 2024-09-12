@@ -3,8 +3,11 @@
 import React from "react";
 import Input from "./Input";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export const Footer = () => {
+  const router = useRouter();
+
   return (
     <footer className="bg-secondary w-full text-white">
       <div className="container mx-auto py-10 px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
@@ -20,9 +23,24 @@ export const Footer = () => {
         <div className="space-y-3">
           <h3 className="text-primary text-lg font-semibold">Company</h3>
           <ul className="space-y-2 text-off-white text-sm">
-            <li>Product</li>
-            <li>Blog</li>
-            <li>Support</li>
+            <li
+              onClick={() => router.push("/products")}
+              className="cursor-pointer"
+            >
+              Products
+            </li>
+            <li
+              onClick={() => router.push("/blogs")}
+              className="cursor-pointer"
+            >
+              Blog
+            </li>
+            <li
+              onClick={() => router.push("/supports")}
+              className="cursor-pointer"
+            >
+              Support
+            </li>
           </ul>
         </div>
 
@@ -39,7 +57,7 @@ export const Footer = () => {
 
         {/* Contact Information */}
         <div className="space-y-3">
-          <h3 className="text-primary text-lg font-semibold">Contact Us</h3>
+          <h3 className="text-primary text-lg font-semibold cursor-pointer" onClick={() => router.push('/supports')}>Contact Us</h3>
           <ul className="space-y-2 text-off-white text-sm">
             <li>info@teamapp.com</li>
             <li>1-800-200-300</li>

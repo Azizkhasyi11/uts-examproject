@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer";
+import ToTop from "@/components/ToTop";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Team - Collaboration Tool for Remote Teams",
@@ -28,9 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.className} antialiased scroll-smooth bg-secondary`}
+        className={`${montserrat.variable} antialiased scroll-smooth bg-secondary`}
       >
-        {children}
+        <Navbar />
+        <div className="min-h-dvh bg-white">{children}</div>
+        <Footer />
+        <ToTop />
       </body>
     </html>
   );

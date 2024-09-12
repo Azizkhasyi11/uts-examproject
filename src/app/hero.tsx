@@ -8,7 +8,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 const Hero = () => {
   return (
-    <section className="relative h-screen">
+    <section className="relative h-screen z-10">
       {/* Hero Background Image */}
       <Image
         src="/img/hero.png"
@@ -57,6 +57,7 @@ const Hero = () => {
           >
             {/* Input with Icon */}
             <Input
+            className="w-full md:w-96"
               label="email"
               placeholder="Enter your email"
               icon={<FaArrowRightLong />}

@@ -1,4 +1,3 @@
-// pages/404.tsx
 "use client";
 
 import Button from "@/components/Button";
