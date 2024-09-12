@@ -23,9 +23,24 @@ export const Footer = () => {
         <div className="space-y-3">
           <h3 className="text-primary text-lg font-semibold">Company</h3>
           <ul className="space-y-2 text-off-white text-sm">
-            <li onClick={() => router.push('/products')} className="cursor-pointer">Products</li>
-            <li>Blog</li>
-            <li>Support</li>
+            <li
+              onClick={() => router.push("/products")}
+              className="cursor-pointer"
+            >
+              Products
+            </li>
+            <li
+              onClick={() => router.push("/blogs")}
+              className="cursor-pointer"
+            >
+              Blog
+            </li>
+            <li
+              onClick={() => router.push("/supports")}
+              className="cursor-pointer"
+            >
+              Support
+            </li>
           </ul>
         </div>
 
@@ -42,7 +57,7 @@ export const Footer = () => {
 
         {/* Contact Information */}
         <div className="space-y-3">
-          <h3 className="text-primary text-lg font-semibold">Contact Us</h3>
+          <h3 className="text-primary text-lg font-semibold cursor-pointer" onClick={() => router.push('/supports')}>Contact Us</h3>
           <ul className="space-y-2 text-off-white text-sm">
             <li>info@teamapp.com</li>
             <li>1-800-200-300</li>

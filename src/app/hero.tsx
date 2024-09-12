@@ -57,6 +57,7 @@ const Hero = () => {
           >
             {/* Input with Icon */}
             <Input
+            className="w-full md:w-96"
               label="email"
               placeholder="Enter your email"
               icon={<FaArrowRightLong />}

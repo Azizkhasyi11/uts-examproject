@@ -5,7 +5,7 @@ import NavLink from "./NavLink";
 import Button from "../Button";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState(false);
@@ -38,12 +38,14 @@ const Navbar = () => {
     );
   }, []);
 
+  const isHomePage = usePathname() === "/";
+
   return (
     <nav
       className={`w-full fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
-        isMenuOpen || isScrolling
+        (isMenuOpen || isScrolling || !isHomePage)
           ? "bg-secondary shadow-lg py-3 px-2"
-          : "bg-transparent py-1"
+          : "backdrop-blur-sm py-1"
       }`}
     >
       <div className="lg:container lg:mx-auto px-4 mobile:px-6 lg:px-8">
@@ -62,9 +64,10 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8 items-center">
-            <NavLink href="#">Products</NavLink>
-            <NavLink href="#">Blog</NavLink>
-            <NavLink href="#">Support</NavLink>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/products">Products</NavLink>
+            <NavLink href="/blogs">Blog</NavLink>
+            <NavLink href="/supports">Support</NavLink>
             <NavLink href="#">Login</NavLink>
             <Button
               className="text-secondary bg-opacity-55"
@@ -93,13 +96,16 @@ const Navbar = () => {
           className={`${isMenuOpen ? "bg-secondary" : "bg-transparent"} py-2`}
         >
           <div className="px-4 pt-4 pb-2 space-y-2">
-            <NavLink href="#" className="block text-white">
+            <NavLink href="/" className="block text-white">
+              Home
+            </NavLink>
+            <NavLink href="/products" className="block text-white">
               Products
             </NavLink>
-            <NavLink href="#" className="block text-white">
+            <NavLink href="/blogs" className="block text-white">
               Blog
             </NavLink>
-            <NavLink href="#" className="block text-white">
+            <NavLink href="/supports" className="block text-white">
               Support
             </NavLink>
             <NavLink href="#" className="block text-white">
