@@ -5,25 +5,36 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
 
-const lexendDeca = Montserrat({
+const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
-  title: "Team",
-  description: "Team is a collaboration tool for remote teams.",
+  title: "Team - Collaboration Tool for Remote Teams",
+  description:
+    "Remake by: Aziz Khasyi. Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively.",
+  authors: [{ name: "Aziz Khasyi" }],
+  openGraph: {
+    title: "Team - Collaboration Tool for Remote Teams",
+    description:
+      "Remake by: Aziz Khasyi. Team is a powerful collaboration tool designed for remote teams to work together efficiently and effectively.",
+    url: "https://teamdots.vercel.app",
+    type: "website",
+    locale: "en_US",
+    siteName: "Team",
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
-        className={`${lexendDeca.variable} antialiased scroll-smooth bg-secondary`}
+        className={`${montserrat.variable} antialiased scroll-smooth bg-secondary`}
       >
         <Navbar />
         <div className="min-h-dvh bg-white">{children}</div>
