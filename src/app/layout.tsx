@@ -5,7 +5,10 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
 
-const lexendDeca = Montserrat({ subsets: ["latin"] });
+const lexendDeca = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
 
 export const metadata: Metadata = {
   title: "Team",
@@ -20,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${lexendDeca.className} antialiased scroll-smooth bg-secondary`}
+        className={`${lexendDeca.variable} antialiased scroll-smooth bg-secondary`}
       >
         <Navbar />
         <div className="min-h-dvh bg-white">{children}</div>

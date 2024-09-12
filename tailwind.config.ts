@@ -14,6 +14,9 @@ const config: Config = {
         tertiary: "#FFD76D",
         quaternary: "#4ECDC",
       },
+      fontFamily: {
+        montserrat: ["--font-montserrat", "Montserrat", "sans-serif"],
+      }
     },
   },
   plugins: [],
