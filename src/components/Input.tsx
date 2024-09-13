@@ -6,6 +6,7 @@ interface InputProps {
   label: string;
   placeholder: string;
   icon?: React.ReactNode;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
 }
 
@@ -14,6 +15,7 @@ const Input: React.FC<InputProps> = ({
   placeholder,
   icon,
   className,
+  onChange,
 }) => {
   return (
     <div className={`relative ${className}`}>
@@ -25,6 +27,7 @@ const Input: React.FC<InputProps> = ({
         type="email"
         id={label}
         placeholder={placeholder}
+        onChange={onChange}
         className="block w-full rounded px-3 py-3 text-sm font-light shadow focus:outline-none mobile:w-auto"
       />
 

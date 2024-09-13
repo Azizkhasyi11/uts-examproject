@@ -19,7 +19,7 @@ const ProductsPage = () => {
     {
       title: "Pro",
       description: "Best for growing businesses and teams.",
-      price: 50,
+      price: 60.99,
       features: [
         { name: "50 users", included: true },
         { name: "10GB storage", included: true },
@@ -30,7 +30,7 @@ const ProductsPage = () => {
     {
       title: "Enterprise",
       description: "Advanced features for large organizations.",
-      price: 100,
+      price: 99.9,
       features: [
         { name: "Unlimited users", included: true },
         { name: "100GB storage", included: true },

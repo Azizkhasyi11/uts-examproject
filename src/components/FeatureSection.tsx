@@ -52,7 +52,7 @@ const FeatureSection = ({
 
           <a
             href="#"
-            className="mt-6 inline-flex items-center text-primary hover:underline font-medium text-sm"
+            className="mt-6 inline-flex items-center text-primary hover:underline font-medium text-md"
           >
             <span>Learn more</span>
             <FaArrowRight className="ml-2" />
