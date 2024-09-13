@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface NavLinkProps {
   href: string;
   children: React.ReactNode;
@@ -8,9 +10,9 @@ interface NavLinkProps {
 
 const NavLink: React.FC<NavLinkProps> = ({ href, children, className }) => {
   return (
-    <a href={href} className={`text-white hover:no-underline font-medium underline ${className}`}>
+    <Link href={href} className={`text-white hover:no-underline font-medium underline ${className}`} prefetch>
       {children}
-    </a>
+    </Link>
   );
 };
 

@@ -1,5 +1,7 @@
 import { FaCalendarAlt } from "react-icons/fa";
 import { faker } from "@faker-js/faker";
+import { BsArrowRight } from "react-icons/bs";
+import Image from "next/image";
 
 const BlogPage = () => {
   const blogs = Array.from({ length: 6 }).map((_, i) => ({
@@ -28,14 +30,19 @@ const BlogPage = () => {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-white rounded-xl shadow-md overflow-hidden transition hover:shadow-lg"
+              className="bg-white flex flex-col h-full rounded-xl shadow-md overflow-hidden transition hover:shadow-lg"
             >
-              <img
-                src={blog.imageUrl}
-                alt={blog.title}
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-6">
+              {/* Use Next.js Image component */}
+              <div className="relative h-48 w-full">
+                <Image
+                  src={blog.imageUrl}
+                  alt={blog.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
                 <h2 className="text-2xl font-bold text-gray-900">
                   {blog.title}
                 </h2>
@@ -43,12 +50,12 @@ const BlogPage = () => {
                   <FaCalendarAlt className="mr-1" />
                   <p className="text-sm">{blog.date}</p>
                 </div>
-                <p className="mt-4 text-gray-700">{blog.summary}</p>
+                <p className="my-4 text-gray-700 flex-grow">{blog.summary}</p>
                 <a
                   href="#"
-                  className="mt-4 block text-indigo-600 font-medium hover:underline"
+                  className="mt-4 inline-flex items-center text-indigo-600 font-medium hover:underline self-end"
                 >
-                  Read More
+                  Read More <BsArrowRight className="ml-2" />
                 </a>
               </div>
             </div>
