@@ -8,10 +8,10 @@ const SupportPage = () => {
       <div className="max-w-screen-lg px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">
             Contact Support
           </h1>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             We&apos;re here to help! Reach out to us with any questions or
             concerns.
           </p>
@@ -20,10 +20,10 @@ const SupportPage = () => {
         {/* Contact Options */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {/* Phone Support */}
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-white dark:bg-gray-950 dark:border dark:border-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
             <FaPhone className="text-indigo-600 text-4xl mb-4" />
-            <h3 className="text-xl font-bold text-gray-900">Call Us</h3>
-            <p className="mt-2 text-gray-700">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Call Us</h3>
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               Our support team is available 24/7.
             </p>
             <p className="mt-1 text-indigo-600 font-medium">
@@ -32,10 +32,10 @@ const SupportPage = () => {
           </div>
 
           {/* Email Support */}
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-white dark:bg-gray-950 dark:border dark:border-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
             <FaEnvelope className="text-indigo-600 text-4xl mb-4" />
-            <h3 className="text-xl font-bold text-gray-900">Email Us</h3>
-            <p className="mt-2 text-gray-700">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Email Us</h3>
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               We&apos;ll get back to you as soon as possible.
             </p>
             <p className="mt-1 text-indigo-600 font-medium">
@@ -44,10 +44,10 @@ const SupportPage = () => {
           </div>
 
           {/* Office Location */}
-          <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition">
+          <div className="flex flex-col items-center p-6 bg-white dark:bg-gray-950 dark:border dark:border-gray-200 rounded-lg shadow-md hover:shadow-lg transition">
             <FaMapMarkerAlt className="text-indigo-600 text-4xl mb-4" />
-            <h3 className="text-xl font-bold text-gray-900">Visit Us</h3>
-            <p className="mt-2 text-gray-700">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">Visit Us</h3>
+            <p className="mt-2 text-gray-700 dark:text-gray-300">
               Our office is open Monday to Friday.
             </p>
             <p className="mt-1 text-indigo-600 font-medium">
@@ -58,7 +58,7 @@ const SupportPage = () => {
 
         {/* Additional Info */}
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Need more help?{" "}
             <a href="#" className="text-indigo-600 hover:underline">
               Submit a ticket

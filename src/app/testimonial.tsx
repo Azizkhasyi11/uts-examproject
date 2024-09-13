@@ -64,8 +64,8 @@ const TestimonialSection = () => {
   }
 
   return (
-    <section className="py-12">
-      <div className="flex flex-col items-center">
+    <section>
+      <div className="flex flex-col items-center py-12">
         <div className="z-10 mb-8">
           <h2 className="text-3xl text-center font-bold">
             What our users are saying

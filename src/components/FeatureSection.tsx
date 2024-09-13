@@ -45,10 +45,10 @@ const FeatureSection = ({
 
         {/* Text section */}
         <div>
-          <h2 className="text-3xl font-bold text-secondary md:text-4xl">
+          <h2 className="text-3xl font-bold text-secondary dark:text-white md:text-4xl">
             {title}
           </h2>
-          <p className="mt-4 text-secondary">{description}</p>
+          <p className="mt-4 text-secondary dark:text-white">{description}</p>
 
           <a
             href="#"

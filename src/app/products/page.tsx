@@ -45,10 +45,10 @@ const ProductsPage = () => {
       <div className="max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
         {/* Section title */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl lg:text-5xl">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl lg:text-5xl">
             Choose Your Plan
           </h1>
-          <p className="mt-4 text-lg text-gray-600">
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             Select a plan that fits your needs. Simple, transparent pricing.
           </p>
         </div>
@@ -62,7 +62,7 @@ const ProductsPage = () => {
 
         {/* Additional section */}
         <div className="mt-16 text-center">
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-gray-600 dark:text-gray-300">
             Need a custom plan?{" "}
             <a href="#" className="text-indigo-600 hover:underline">
               Contact us
