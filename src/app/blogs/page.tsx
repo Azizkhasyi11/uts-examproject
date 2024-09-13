@@ -19,8 +19,8 @@ const BlogPage = () => {
       <div className="max-w-screen-xl px-6 sm:py-12 lg:px-8 lg:py-16 mx-auto">
         {/* Page Title */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">Blog</h1>
-          <p className="mt-4 text-lg text-gray-600">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">Blog</h1>
+          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
             Insights and articles on the latest trends in web development
           </p>
         </div>
@@ -30,7 +30,7 @@ const BlogPage = () => {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-white flex flex-col h-full rounded-xl shadow-md overflow-hidden transition hover:shadow-lg"
+              className="bg-white dark:bg-gray-950 dark:border dark:border-gray-200 flex flex-col h-full rounded-xl shadow-md overflow-hidden transition hover:shadow-lg"
             >
               {/* Use Next.js Image component */}
               <div className="relative h-48 w-full">
@@ -43,14 +43,14 @@ const BlogPage = () => {
                 />
               </div>
               <div className="p-6 flex flex-col flex-grow">
-                <h2 className="text-2xl font-bold text-gray-900">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
                   {blog.title}
                 </h2>
-                <div className="flex items-center mt-2 text-gray-600">
+                <div className="flex items-center mt-2 text-gray-600 dark:text-gray-300">
                   <FaCalendarAlt className="mr-1" />
                   <p className="text-sm">{blog.date}</p>
                 </div>
-                <p className="my-4 text-gray-700 flex-grow">{blog.summary}</p>
+                <p className="my-4 text-gray-700 dark:text-white flex-grow">{blog.summary}</p>
                 <a
                   href="#"
                   className="mt-4 inline-flex items-center text-indigo-600 font-medium hover:underline self-end"

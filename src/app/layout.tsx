@@ -5,10 +5,10 @@ import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
 import { Analytics } from "@vercel/analytics/next";
+import { Provider } from "./providers";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -35,12 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} antialiased scroll-smooth bg-secondary`}
+        className={`${montserrat.className} antialiased scroll-smooth bg-secondary`} suppressHydrationWarning
       >
-        <Navbar />
-        <div className="min-h-dvh bg-white">{children}</div>
-        <Footer />
-        <ToTop />
+        <Provider>
+          <Navbar />
+          <div className="min-h-dvh bg-white dark:bg-gray-950 dark:text-white">
+            {children}
+          </div>
+          <Footer />
+          <ToTop />
+        </Provider>
         <Analytics />
       </body>
     </html>

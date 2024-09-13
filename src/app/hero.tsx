@@ -41,7 +41,8 @@ const Hero = () => {
             variants={fadeInUp}
             transition={{ delay: 0.3 }}
           >
-            Instant collaboration for remote teams
+            Instant collaboration for remote{" "}
+            <span className="text-primary">teams</span>
           </motion.h1>
 
           {/* Subtitle */}

@@ -6,10 +6,10 @@ import { motion } from "framer-motion";
 
 const Highlight = () => {
   return (
-    <section className="relative overflow-hidden py-12">
-      <div className="container mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
+    <section className="relative overflow-hidden">
+      <div className="container mx-auto grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16 py-12">
         <motion.div
-          className="relative h-64 sm:h-80 lg:h-full w-full lg:ml-24 lg:mr-[-100px] lg:order-last"
+          className="relative h-[480px] lg:ml-24 lg:mr-[-100px] lg:order-last"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -17,7 +17,7 @@ const Highlight = () => {
           <Image
             alt="Team chat highlight"
             src="/img/demo.png"
-            layout="fill"
+            fill
             objectFit="cover"
           />
         </motion.div>
@@ -28,13 +28,13 @@ const Highlight = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1 }}
-            className="text-3xl font-bold sm:text-4xl"
+            className="text-3xl font-bold sm:text-4xl dark:text-white"
           >
             Chats for your distributed teams
           </motion.h2>
 
           <motion.p
-            className="mt-4 text-gray-600 leading-relaxed"
+            className="mt-4 text-gray-600 dark:text-white leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -46,7 +46,7 @@ const Highlight = () => {
 
           <a
             href="#"
-            className="mt-8 inline-flex items-center rounded text-sm font-medium underline text-primary hover:no-underline focus:outline-none"
+            className="mt-8 inline-flex items-center rounded text-md font-medium hover:underline text-primary no-underline focus:outline-none"
           >
             <span className="pr-2">Learn more</span>
             <FaArrowRight />

@@ -24,7 +24,7 @@ const TestimonialCard = ({
 }: TestimonialCardProps) => {
   return (
     <motion.div
-      className="bg-white p-5 shadow-lg min-w-[300px] max-w-[400px] mx-auto"
+      className="bg-white p-5 shadow-lg min-w-[300px] max-w-[400px] mx-auto dark:bg-gray-950 dark:border dark:border-gray-200 dark:rounded-lg"
       initial={{ opacity: 0, scale: 0.9 }} 
       animate={{ opacity: 1, scale: isActive ? 1.05 : 1 }}
       transition={{ duration: 0.5 }}
@@ -38,7 +38,7 @@ const TestimonialCard = ({
             />
           ))}
         </div>
-        <p className="mt-4 text-sm text-gray-600 leading-relaxed">{content}</p>
+        <p className="mt-4 text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{content}</p>
       </div>
       <div className="mt-8 flex items-center gap-4">
         <Image
@@ -50,7 +50,7 @@ const TestimonialCard = ({
         />
         <div>
           <h4 className="text-sm font-semibold">{name}</h4>
-          <p className="text-xs text-gray-600">{title}</p>
+          <p className="text-xs text-gray-600 dark:text-gray-300">{title}</p>
         </div>
       </div>
     </motion.div>
