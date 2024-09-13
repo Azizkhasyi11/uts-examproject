@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer";
 import ToTop from "@/components/ToTop";
+import { Analytics } from "@vercel/analytics/next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
         <div className="min-h-dvh bg-white">{children}</div>
         <Footer />
         <ToTop />
+        <Analytics />
       </body>
     </html>
   );
